@@ -1,0 +1,1 @@
+export const filterTasks = (datas, filter) => datas.filter(data => data.completed === filter);
