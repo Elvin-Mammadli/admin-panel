@@ -33,7 +33,7 @@ export const Inbox = () => {
   console.log("rendered")
 
   return (
-    <Box>
+    <>
       <Stack
         flex={1}
         direction="column"
@@ -54,8 +54,8 @@ export const Inbox = () => {
             }} />
           </Box>
         </Stack>
-        <Grid container spacing={2} >
-          <Grid item xs={12} md={5}>
+        <Grid container spacing={2} sx={{justifyContent: { xs: "center"}}}>
+          <Grid item sm={12} md={5}>
             <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", paddingX: 3, paddingY: 2, bgcolor: "#ee117c", borderRadius: 3 }}>
               <Box display="flex" justifyContent="space-between" my={2}>
                 <Box sx={{
@@ -80,7 +80,7 @@ export const Inbox = () => {
               </AvatarGroup>
             </Card>
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item sm={12} md={7}>
             <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", paddingX: 3, paddingY: 2, bgcolor: "#9a8cff", borderRadius: 3 }}>
               <Box display="flex" justifyContent="space-between" my={2}>
                 <Box sx={{
@@ -95,7 +95,6 @@ export const Inbox = () => {
                 }}>
                   <Key />
                 </Box>
-                <MoreHoriz />
               </Box>
               <Typography my={2}>RD for New Banking Mobile App</Typography>
               <AvatarGroup max={3} sx={{ flexDirection: "row" }}>
@@ -151,6 +150,6 @@ export const Inbox = () => {
           }
         </Box>
       </Stack>
-    </Box>
+    </>
   )
 };

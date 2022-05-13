@@ -8,7 +8,7 @@ const Rightbar = () => {
   };
 
   return (
-    <Stack bgcolor="white" flex={3} p={4} borderLeft="2px solid #eee">
+    <Stack bgcolor="white" flex={3} p={4} borderLeft="2px solid #eee" sx={{ display: { xs: "none", lg: "flex"}}}>
       <Box display="flex" flexDirection="column" flex={2}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Typography fontWeight="bolder" fontSize={20}>Today's Schedule</Typography>
