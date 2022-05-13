@@ -30,8 +30,6 @@ export const Inbox = () => {
   const completedTasks = useMemo(() => filterTasks(tasks, true), [tasks]);
   const unCompletedTasks = useMemo(() => filterTasks(tasks, false), [tasks]);
 
-  console.log("rendered")
-
   return (
     <>
       <Stack

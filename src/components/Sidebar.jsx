@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Avatar, Box, CardHeader, List, SpeedDial as MuiSpeedDial, MenuItem, Menu as MuiMenu, Fade, SpeedDialAction, SpeedDialIcon, Typography, IconButton } from '@mui/material'
+import { Avatar, Box, List, SpeedDial as MuiSpeedDial, MenuItem, Menu as MuiMenu, SpeedDialAction, SpeedDialIcon, Typography, IconButton } from '@mui/material'
 import { WorkOutline, InboxOutlined, ChatOutlined, AccessTimeOutlined, EventOutlined, SettingsOutlined, FileCopy } from "@mui/icons-material";
 import Menu from './Menu';
 import Favorites from './Favorites';
-import { deleteCredentials } from '../utils/functions';
 
 const actions = [
   { icon: <FileCopy />, name: 'Copy' },
 ];
 
 const menus = [
-  { title: "My Tasks", route: "/mytasks", icon: <InboxOutlined /> },
-  { title: "Inbox", route: "/inbox", icon: <ChatOutlined /> },
-  { title: "Projects", route: "/projects", icon: <WorkOutline /> },
-  { title: "Standups", route: "/standups", icon: <AccessTimeOutlined /> },
-  { title: "Meetings", route: "/meetings", icon: <EventOutlined /> },
-  { title: "Settings", route: "/settings", icon: <SettingsOutlined /> }
+  { title: "My Tasks", route: "/mytasks", icon: <InboxOutlined />, id: 1 },
+  { title: "Inbox", route: "/inbox", icon: <ChatOutlined />, id: 2},
+  { title: "Projects", route: "/projects", icon: <WorkOutline />, id:3 },
+  { title: "Standups", route: "/standups", icon: <AccessTimeOutlined />, id: 4 },
+  { title: "Meetings", route: "/meetings", icon: <EventOutlined />, id: 5 },
+  { title: "Settings", route: "/settings", icon: <SettingsOutlined />, id: 6 }
 ];
 
 const favorites = [
@@ -27,26 +26,25 @@ const favorites = [
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [active, setActive] = useState("Inbox");
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+
+  const handleClick = (event) => setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+
   const userLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
   }
 
   return (
-    <Box bgcolor="#f8f8f8" borderRight="2px solid #eee" flex={2} display="flex" flexDirection="column" justifyContent="space-evenly"
+    <Box bgcolor="#f8f8f8" borderRight="2px solid #eee" flex={2} flexDirection="column" justifyContent="space-evenly"
       sx={{ display: { xs: "none", sm: "flex"}}}
     >
       <Box display="flex" alignItems="center" pl={1}>
         <IconButton onClick={handleClick}>
-          <Avatar>R</Avatar>
+          <Avatar src="https://randomuser.me/api/portraits/men/29.jpg"/>
         </IconButton>
         <MuiMenu
           anchorEl={anchorEl}
@@ -71,8 +69,8 @@ const Sidebar = () => {
 
       <List>
         <Typography paddingLeft="16px">Menu</Typography>
-        {menus.map(({ title, route, icon }) => (
-          <Menu key={title} title={title} route={route} icon={icon} />
+        {menus.map(({ title, route, icon, id }) => (
+          <Menu key={id} title={title} route={route} icon={icon} active={active} setActive={setActive} />
         ))}
       </List>
       <List>

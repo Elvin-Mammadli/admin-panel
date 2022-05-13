@@ -1,4 +1,4 @@
-import { Facebook, Lightbulb } from '@mui/icons-material';
+import { Facebook } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
 const Task = ({ title }) => {

@@ -1,4 +1,4 @@
-import { Add, Apps, ArrowRight, CallEnd, CallEndOutlined, ChevronRight, Clear, DateRange, Delete, MoreHoriz, MoreVert, Whatshot } from '@mui/icons-material'
+import { Add, Apps, CallEndOutlined, ChevronRight, Clear, DateRange, MoreHoriz, MoreVert, Whatshot } from '@mui/icons-material'
 import { Avatar, AvatarGroup, Box, Button, Chip, Divider, IconButton, InputBase, Stack, Typography } from '@mui/material'
 import React from 'react'
 

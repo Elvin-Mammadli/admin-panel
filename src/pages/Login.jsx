@@ -17,7 +17,7 @@ export default function Login() {
     console.log(userData)
     if(email === "test@gmail.com" && password === "12345") {
       localStorage.setItem("user", userData);
-      navigate("/")
+      navigate("/inbox")
     } else {
       setLoginError(true);
     }
