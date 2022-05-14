@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { Stack } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import Feed from '../components/Feed';
-import Rightbar from '../components/Rightbar';
-import Sidebar from '../components/Sidebar';
+import { Feed } from '../components/ScreenParts';
 import { TASKS_ACTIONS } from "../store/Tasks";
+import { LeftDrawer, RightDrawer } from "../components/ScreenParts";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -14,12 +13,12 @@ const Main = () => {
   }, [dispatch]);
 
   return (
-    <Stack direction="row" spacing={2} justifyContent="space-between" height="100vh">
-      <Sidebar />
+    <Stack direction="row" spacing={2} justifyContent="space-evenly" height="100vh">
+      <LeftDrawer />
       <Feed />
-      <Rightbar />
+      <RightDrawer />
     </Stack>
   )
 }
 
-export default Main
+export default Main;

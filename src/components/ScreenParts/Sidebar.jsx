@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Avatar, Box, List, SpeedDial as MuiSpeedDial, MenuItem, Menu as MuiMenu, SpeedDialAction, SpeedDialIcon, Typography, IconButton } from '@mui/material'
 import { WorkOutline, InboxOutlined, ChatOutlined, AccessTimeOutlined, EventOutlined, SettingsOutlined, FileCopy } from "@mui/icons-material";
-import Menu from './Menu';
-import Favorites from './Favorites';
+import { Menu, Favorites } from './components';
 
 const actions = [
   { icon: <FileCopy />, name: 'Copy' },
@@ -24,7 +23,8 @@ const favorites = [
   { title: "UI Design Revision", color: "info" }
 ]
 
-const Sidebar = () => {
+
+export const Sidebar = () => {
   const navigate = useNavigate();
   const [active, setActive] = useState("Inbox");
   const [anchorEl, setAnchorEl] = useState(null);
@@ -39,9 +39,7 @@ const Sidebar = () => {
   }
 
   return (
-    <Box bgcolor="#f8f8f8" borderRight="2px solid #eee" flex={2} flexDirection="column" justifyContent="space-evenly"
-      sx={{ display: { xs: "none", sm: "flex"}}}
-    >
+    <Box bgcolor="#f8f8f8" display="flex" flex={2} flexDirection="column" justifyContent="space-evenly">
       <Box display="flex" alignItems="center" pl={1}>
         <IconButton onClick={handleClick}>
           <Avatar src="https://randomuser.me/api/portraits/men/29.jpg"/>
@@ -106,6 +104,4 @@ const Sidebar = () => {
       <Typography ml="16px">2022 Elvin Mammadli</Typography>
     </Box>
   )
-}
-
-export default Sidebar
+};

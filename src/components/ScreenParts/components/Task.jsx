@@ -1,7 +1,7 @@
 import { Facebook } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 
-const Task = ({ title }) => {
+export const Task = ({ title }) => {
   return (
     <Box display="flex" alignItems="center">
       <Box sx={{
@@ -20,6 +20,4 @@ const Task = ({ title }) => {
       <Typography flex={1} fontSize="small">{title}</Typography>
     </Box>
   )
-}
-
-export default Task;
+};

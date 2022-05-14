@@ -1,8 +1,7 @@
 import { CircleOutlined } from '@mui/icons-material'
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import React from 'react'
 
-const Favorites = ({ title, color, fontSize='small' }) => {
+export const Favorites = ({ title, color, fontSize='small' }) => {
   return (
     <ListItem disablePadding>
       <ListItemButton>
@@ -13,6 +12,4 @@ const Favorites = ({ title, color, fontSize='small' }) => {
       </ListItemButton>
     </ListItem>
   )
-}
-
-export default Favorites
+};

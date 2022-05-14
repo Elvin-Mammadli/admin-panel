@@ -1,7 +1,7 @@
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Menu = ({ title, route, icon, active, setActive }) => {
+export const Menu = ({ title, route, icon, active, setActive }) => {
 
   return (
     <Link to={route} style={{ textDecoration: 'none', color: "inherit" }}>
@@ -15,6 +15,4 @@ const Menu = ({ title, route, icon, active, setActive }) => {
       </ListItem>
     </Link>
   )
-}
-
-export default Menu
+};

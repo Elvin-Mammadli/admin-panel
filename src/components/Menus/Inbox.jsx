@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { filterTasks } from "../../utils/functions";
 import { useSelector } from 'react-redux';
 import { getTasks } from '../../store/Tasks/tasks.selectors';
-import Task from '../Task';
+import { Task } from '../ScreenParts/components';
 
 export const Inbox = () => {
   const tasks = useSelector(getTasks);
@@ -53,7 +53,7 @@ export const Inbox = () => {
           </Box>
         </Stack>
         <Grid container spacing={2} sx={{justifyContent: { xs: "center"}}}>
-          <Grid item sm={12} md={5}>
+          <Grid item xs={12} md={5}>
             <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", paddingX: 3, paddingY: 2, bgcolor: "#ee117c", borderRadius: 3 }}>
               <Box display="flex" justifyContent="space-between" my={2}>
                 <Box sx={{
@@ -78,7 +78,7 @@ export const Inbox = () => {
               </AvatarGroup>
             </Card>
           </Grid>
-          <Grid item sm={12} md={7}>
+          <Grid item xs={12} md={7}>
             <Card sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", paddingX: 3, paddingY: 2, bgcolor: "#9a8cff", borderRadius: 3 }}>
               <Box display="flex" justifyContent="space-between" my={2}>
                 <Box sx={{
