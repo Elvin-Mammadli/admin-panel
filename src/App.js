@@ -1,12 +1,20 @@
-import { Box, CssBaseline } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import MyRoutes from './routes/MyRoutes';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "Outfit",
+    ]
+  }
+})
 
 function App() {
   return (
-    <Box>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <MyRoutes />
-    </Box>
+    </ThemeProvider>
   );
 }
 

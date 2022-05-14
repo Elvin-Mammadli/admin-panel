@@ -9,7 +9,7 @@ export const Rightbar = () => {
 
   return (
     <Stack bgcolor="white" flex={3} p={4}>
-      <Box display="flex" flexDirection="column" flex={2}>
+      <Box display="flex" flexDirection="column" flex={2} my={2}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Typography fontWeight="bolder" fontSize={20}>Today's Schedule</Typography>
           <Box display="flex" bgcolor="#f5f5f5" justifyContent="center" alignItems="center" borderRadius={3} p={1}>
@@ -56,7 +56,7 @@ export const Rightbar = () => {
             <MoreHoriz sx={{ color: "#d1d1d1" }} />
           </IconButton>
         </Box>
-        <Box display="flex" justifyContent="space-between">
+        <Box display="flex" justifyContent="space-between" flexWrap="wrap">
           <Box position="relative">
             <Typography fontSize="small" color="#a1a1a1" fontWeight="bold">Completed</Typography>
             <Box display="flex">
@@ -98,13 +98,14 @@ export const Rightbar = () => {
       <Divider />
       <Box flex={1}>
         <Typography mt={2} mb={1} fontSize="small" color="#a1a1a1" fontWeight="bold">Add Colaborators</Typography>
-        <Box display="flex" gap={2} alignItems="center">
+        <Box display="flex" gap={2} alignItems="center" flexWrap="wrap">
           <Chip
             avatar={<Avatar alt="Natacha" src="https://randomuser.me/api/portraits/women/24.jpg" />}
             label="Angela"
             variant="outlined"
             onDelete={handleDelete}
             deleteIcon={<Clear />}
+            style={{backgroundColor:'#edcdff', color: '#5e088f'}}
           />
           <Chip
             avatar={<Avatar alt="Natacha" src="https://randomuser.me/api/portraits/men/24.jpg" />}
@@ -112,6 +113,7 @@ export const Rightbar = () => {
             variant="outlined"
             onDelete={handleDelete}
             deleteIcon={<Clear />}
+            style={{backgroundColor:'#cdffdb', color: '#088f0a'}}
           />
           <IconButton sx={{bgcolor: "#eee"}}>
             <Add />

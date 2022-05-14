@@ -37,7 +37,7 @@ export function RightDrawer(props) {
         }}
         sx={{
           display: { lg: 'block'},
-          '& .MuiDrawer-paper': { boxSizing: 'border-box'},
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: "80%"},
         }}
       >
         <Rightbar />

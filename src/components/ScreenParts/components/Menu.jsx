@@ -1,8 +1,8 @@
-import { ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Badge, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export const Menu = ({ title, route, icon, active, setActive }) => {
-
+export const Menu = ({ menu, active, setActive }) => {
+  const { title, route, icon, notification } = menu;
   return (
     <Link to={route} style={{ textDecoration: 'none', color: "inherit" }}>
       <ListItem disablePadding sx={ active === title ? {borderLeft: "4px solid red"} : null}>
@@ -10,7 +10,8 @@ export const Menu = ({ title, route, icon, active, setActive }) => {
           <ListItemIcon>
             {icon}
           </ListItemIcon>
-          <ListItemText primary={title}  />
+          <ListItemText primary={title} sx={{color: "#808080"}}/>
+          <Badge badgeContent={notification} color="error"/>
         </ListItemButton>
       </ListItem>
     </Link>

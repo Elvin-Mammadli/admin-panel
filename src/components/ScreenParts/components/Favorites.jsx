@@ -8,7 +8,7 @@ export const Favorites = ({ title, color, fontSize='small' }) => {
         <ListItemIcon>
           <CircleOutlined fontSize={fontSize} color={color} />
         </ListItemIcon>
-        <ListItemText primary={title} />
+        <ListItemText primary={title} sx={{color: "#808080"}}/>
       </ListItemButton>
     </ListItem>
   )
