@@ -14,7 +14,6 @@ export default function Login() {
     const email = data.get('email');
     const password = data.get('password');
     const userData = JSON.stringify({email, password})
-    console.log(userData)
     if(email === "test@gmail.com" && password === "12345") {
       localStorage.setItem("user", userData);
       navigate("/inbox")
