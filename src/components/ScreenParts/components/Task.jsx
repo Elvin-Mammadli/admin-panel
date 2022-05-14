@@ -9,7 +9,7 @@ export const Task = ({ title }) => {
         width: "40px",
         height: "40px",
         borderRadius: "15px",
-        backgroundColor: "#c80061",
+        backgroundColor: "#0078c8",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
