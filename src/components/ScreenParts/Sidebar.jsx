@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Avatar, Box, List, MenuItem, Menu as MuiMenu, Typography, IconButton } from '@mui/material'
-import { WorkOutline, InboxOutlined, ChatOutlined, AccessTimeOutlined, EventOutlined, SettingsOutlined, FileCopy, Add } from "@mui/icons-material";
+import { WorkOutline, InboxOutlined, ChatOutlined, AccessTimeOutlined, EventOutlined, SettingsOutlined, Add } from "@mui/icons-material";
 import { Menu, Favorites } from './components';
-
-const actions = [
-  { icon: <FileCopy />, name: 'Copy' },
-];
 
 const menus = [
   { title: "My Tasks", route: "/mytasks", icon: <InboxOutlined />, id: 1, notification: 0 },
